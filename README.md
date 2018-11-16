@@ -3,4 +3,4 @@ Used Adrunio Uno and ECG electrodes as sensing element. Developing a finger-base
 
 Circuitry:
 
-![heart-rate](https://user-images.githubusercontent.com/39982386/47691736-3c33d100-dbc1-11e8-846c-4d984e69ff03.PNG)
+![picture1](https://user-images.githubusercontent.com/39982386/48652442-1c741980-e9c5-11e8-874a-420e7ca974f0.png)
