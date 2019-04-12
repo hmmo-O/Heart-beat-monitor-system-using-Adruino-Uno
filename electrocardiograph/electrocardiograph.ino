@@ -33,7 +33,8 @@ byte heart[8] = {
   0b00000
 };
 
-void setup() {
+void setup() 
+{
   pinMode(signal, INPUT);
   lcd.createChar(1, heart);
   // set up the LCD's number of columns and rows: 
@@ -46,13 +47,14 @@ void setup() {
   lcd.print("You are         ");
 }
 
-void loop() {
-  
+void loop() 
+{  
   lcd.setCursor(1,0);
   time = millis();
   input = digitalRead(signal);
 
-  if ((input != lastinput)&&(input == HIGH)) {
+  if ((input != lastinput)&&(input == HIGH)) 
+  {
     // If the pin state has just changed from low to high (edge detector)
      period = time - starttime; // Compute the time between the previous beat and the one that has just been detected
      starttime = time; // Define the new time reference for the next period computing
@@ -61,29 +63,33 @@ void loop() {
   }
   lastinput = input; // Save the current pin state for comparison at the next loop iteration
 
-  if (period < 0) {
+  if (period < 0) 
+  {
     frequency = 0;
   }
-  else {
+  else 
+  {
     frequency = 60000/period; // Compute the heart rate in beats per minute (bpm) with the period in milliseconds
     Serial.println(frequency);
   }
   
-  
-  if ((time - death) > 2000) { // Detect if there is no beat after more than 2 seconds
+  if ((time - death) > 2000) 
+  { // Detect if there is no beat after more than 2 seconds
     tone(6,900); // Output a continuous tone to the speaker
     lcd.print("<30");
     lcd.setCursor(8,1);
     lcd.print("dead!   ");
   }
-  
-  else {
+  else 
+  {
     char freq[3];
     
-    if (frequency/100 == 0) {
+    if (frequency/100 == 0) 
+    {
       freq[0] = 32; // Print a space to the first character if the frequency is below 100 bpm
     } 
-    else {
+    else 
+    {
       freq[0] = frequency/100+48; // Sort the hundreds character and convert it in ASCII
     }
     freq[1] = (frequency/10)%10+48; // Sort the thents character and convert it in ASCII
@@ -92,6 +98,5 @@ void loop() {
     lcd.print(freq);
     lcd.setCursor(8,1);
     lcd.print("alive! ");
-  }
-    
+  }   
 }
