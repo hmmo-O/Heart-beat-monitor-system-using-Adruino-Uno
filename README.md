@@ -1,5 +1,5 @@
 # Heart-beat-monitor-system-using-Adruino-Uno
-Used Adrunio Uno and ECG electrodes as sensing element. Developing a finger-based module using IR diode and Photo transistor. LM741 operational amplifiers were used. The circuit at Vo has another gain stage to increase the signal upto 6V for the Adruino to pick up the peaks.
+Used Adrunio Uno and ECG electrodes as sensing element. LM741 operational amplifiers were used. The circuit at Vo has another gain stage to increase the signal upto 6V for the Adruino to pick up the peaks.
 
 Circuitry:
 
